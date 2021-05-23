@@ -72,12 +72,12 @@ public class TopEvents extends AppCompatActivity implements View.OnClickListener
     }
 
     public void openMainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Searcher.class);
         startActivity(intent);
     }
 
     public void openActivity3(ArrayList<String> record){
-        Intent intent = new Intent(this, MainActivity3.class);
+        Intent intent = new Intent(this, FullInfo.class);
         intent.putExtra("record", record);
         startActivity(intent);
     }

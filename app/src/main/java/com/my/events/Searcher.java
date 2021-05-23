@@ -2,33 +2,23 @@ package com.my.events;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 
 import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -38,10 +28,8 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class Searcher extends AppCompatActivity implements View.OnClickListener {
 
     EditText startDate,endDate;
     EditText municipality, space, place, title, description;
@@ -55,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.searcher_view);
 
         startDate=(EditText)findViewById(R.id.startDate);
         endDate=(EditText)findViewById(R.id.endDate);
@@ -111,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void openActivity2(ArrayList<ArrayList<String>> response){
-        Intent intent = new Intent(this, MainActivity2.class);
+        Intent intent = new Intent(this, Listing.class);
         intent.putExtra("length", response.size());
         for (int i = 0; i < response.size(); i++) {
             intent.putStringArrayListExtra(Integer.toString(i),response.get(i));

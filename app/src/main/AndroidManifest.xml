@@ -14,9 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Events"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MainActivity3"></activity>
-        <activity android:name=".MainActivity2"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".FullInfo"></activity>
+        <activity android:name=".Listing"></activity>
+        <activity android:name=".Searcher"></activity>
         <activity android:name=".TopEvents">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

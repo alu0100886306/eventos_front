@@ -5,14 +5,9 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.LruCache;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
@@ -21,7 +16,7 @@ import com.android.volley.toolbox.Volley;
 
 import java.util.ArrayList;
 
-public class MainActivity3 extends AppCompatActivity {
+public class FullInfo extends AppCompatActivity {
 
     ArrayList<String> record;
     TextView title, event_type, date_start, date_end, island, duration, time, municipaly, place, description;
@@ -30,7 +25,7 @@ public class MainActivity3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.full_info_view);
 
         Intent intent = getIntent();
         record = intent.getStringArrayListExtra("record");

@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.LruCache;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -21,13 +20,10 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
-public class MainActivity2 extends AppCompatActivity {
+public class Listing extends AppCompatActivity {
 
     ArrayList<ArrayList<String>> records;
     RecyclerView recycler;
@@ -39,7 +35,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.listing_view);
 
         recycler = (RecyclerView) findViewById(R.id.recyclerView);
         recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -84,7 +80,7 @@ public class MainActivity2 extends AppCompatActivity {
         recycler.setAdapter(adapter);
     }
     public void openActivity3(ArrayList<String> record){
-        Intent intent = new Intent(this, MainActivity3.class);
+        Intent intent = new Intent(this, FullInfo.class);
         intent.putExtra("record", record);
         startActivity(intent);
     }
